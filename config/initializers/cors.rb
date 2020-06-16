@@ -5,7 +5,7 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
   end
 
   allow do
-    origins 'https://bookstore-rails-api.herokuapp.com/'
+    origins 'https://react-bookstore-ermin.herokuapp.com/'
     resource '*', headers: :any, methods: [:get, :post, :put, :patch, :delete, :options, :head], credentials: true
   end
 end
