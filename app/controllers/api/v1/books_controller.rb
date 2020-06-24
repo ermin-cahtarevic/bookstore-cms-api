@@ -39,7 +39,7 @@ module Api
       end
 
       def index
-        @books = Book.all
+        @books = current_user.books
 
         render json: {
           status: 'SUCCESS',
