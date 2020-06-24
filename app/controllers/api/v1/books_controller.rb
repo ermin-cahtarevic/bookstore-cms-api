@@ -3,7 +3,7 @@ module Api
     class BooksController < ApplicationController
 
       def create
-        @book = Book.new(book_params)
+        @book = current_user.books.new(book_params)
 
         if @book.save
           render json: {
@@ -39,7 +39,7 @@ module Api
       end
 
       def index
-        @books = Book.all
+        @books = current_user.books
 
         render json: {
           status: 'SUCCESS',
